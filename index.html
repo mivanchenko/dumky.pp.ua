@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+  <link href="images/sunny.png" rel="shortcut icon" type="image/x-icon" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Думки</title>
+  <style>
+    body {
+      background-color: #eee;
+      color: #111;
+    }
+    div.table {
+      float: left;
+      padding: 10px;
+    }
+    div.nav p {
+      border: 1px solid transparent;
+      margin: 2px;
+      padding: 10px;
+      text-align: center;
+    }
+    div.table p:hover {
+      background-color: #d0e8d0;
+      color: blue;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    ul {
+      list-style-type: none;
+    }
+    .nav {
+      width: 20%;
+    }
+  </style>
 </head>
 <body>
 
+<div style="clear: both;">
+  <div class="table nav">
+    <p onclick="load(this, 'Григорій Сковорода')">Григорій Сковорода</p>
+    <p onclick="load(this, 'Іван Франко')">Іван Франко</p>
+    <p onclick="load(this, 'Ісус Христос')">Ісус Христос</p>
+    <p onclick="load(this, 'Ліна Костенко')">Ліна Костенко</p>
+    <p onclick="load(this, '')">Інше</p>
+  </div>
+  <div id="root" class="table"></div>
+</div>
 
+<canvas width="500" height="500" id="canv" style="display: none;"></canvas>
 
-<p>It just works.</p>
-
-
-
+<script src="script.js"></script>
 </body>
 </html>
