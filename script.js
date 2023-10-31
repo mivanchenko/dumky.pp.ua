@@ -311,11 +311,16 @@ function load(elem, key) {
   status.innerText = '';
 }
 
-//Array.from(document.querySelectorAll('div.nav p')).at(-1).click();
+// Click on item after load
+// Array.from(document.querySelectorAll('div.nav p')).at(-1).click();
 
 (function(){
+  if (new URLSearchParams(document.location.search).get('matrix') !== 'true') {
+    return;
+  }
   const step = 20;
   const canvas = document.getElementById('canv');
+  canvas.style.display = 'block';
   canvas.addEventListener('click', function(e) {
     e.target.style.display = 'none';
   });
@@ -348,5 +353,5 @@ function load(elem, key) {
       else ypos[ind] = y + step;
     });
   }
-//  setInterval(doMatrix, 50);
+  setInterval(doMatrix, 50);
 })();
